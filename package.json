@@ -1,0 +1,28 @@
+{
+  "name": "ps-backend",
+  "version": "1.0.0",
+  "description": "Police system backend code",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node --inspect server.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kyle6012/ps.git"
+  },
+  "author": "Meshack Bahati",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Kyle6012/ps/issues"
+  },
+  "homepage": "https://github.com/Kyle6012/ps#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mysql2": "^3.13.0",
+    "sequelize": "^6.37.6"
+  }
+}
