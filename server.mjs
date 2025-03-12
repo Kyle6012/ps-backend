@@ -4,20 +4,26 @@ import cors from 'cors';
 import sqz from './config/db.mjs';
 import User from'./models/User.mjs';
 import Case from './models/Case.mjs';
+import Officer from './models/Officer.mjs';
+import authRoutes from './routes/authRoutes.mjs';
+import caseRoutes from './routes/caseRoutes.mjs';
 
 dotenv.config();
+
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
 // Test API Route
-app⁶.get('/', (req, res) => {
+app.get('/', (req, res) => {
     res.send("Police System Backend is Running!");
 });
 
-// Sync models with database
-sqz.sync({ alter: true }) // Use { force: true } to drop tables and recreate
+app.use('/api/auth', authRoutes);
+app.use('/api/case', caseRoutes);
+
+sqz.sync({ alter: true }) 
     .then(() => console.log("Database synced successfully."))
     .catch(err => console.error("Error syncing database:", err));
 

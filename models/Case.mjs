@@ -1,6 +1,6 @@
 import { DataTypes } from 'sequelize';
 import sqz from '../config/database';
-import User from'./User';
+import User from './User.mjs';
 
 const Case = sqz.define('Case', {
     id: {
@@ -35,6 +35,10 @@ const Case = sqz.define('Case', {
             model: User,
             key: 'id'
         }
+    },
+    media_url: {
+        type: DataTypes.STRING,
+        allowNull: true
     }
 }, {
     timestamps: true
